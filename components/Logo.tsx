@@ -5,7 +5,7 @@ import React from "react";
 const Logo = () => {
   return (
     <div>
-      <Link href="/" className="flex items-center w-28">
+      <Link href="/" className="flex items-center md:w-28">
         {/* <Image
           src={"/Blog.png"}
           width={500}
