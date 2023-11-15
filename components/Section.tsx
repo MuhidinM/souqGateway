@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -5,15 +6,19 @@ const Section = () => {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="items-center max-w-screen-xl gap-8 px-4 py-8 mx-auto xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-        <img
+        <Image
           className="w-full dark:hidden"
           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg"
           alt="dashboard image2"
+          width={100}
+          height={100}
         />
-        <img
+        <Image
           className="hidden w-full dark:block"
           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"
           alt="dashboard image3"
+          width={100}
+          height={100}
         />
         <div className="mt-4 md:mt-0">
           <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
