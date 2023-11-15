@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="bg-gray-50 border-gray-200 dark:bg-gray-900 border-b dark:border-0">
+      <nav className="bg-gray-50 border-gray-200 dark:bg-gray-800 border-b dark:border-0">
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
           <Logo />
           <div className="flex md:order-2">
@@ -68,7 +68,7 @@ const Navbar = () => {
             }`}
             id="navbar-search"
           >
-            <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-50 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-50 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-50 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-50 dark:bg-gray-800 md:dark:bg-gray-800 dark:border-gray-700">
               {menuItems.map((menuItem) => (
                 <li key={menuItem.title}>
                   <Link
