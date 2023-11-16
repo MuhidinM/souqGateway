@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 
 export const metadata: Metadata = {
   title: "Souq Payment Gateway",
@@ -23,11 +22,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between dark:bg-gray-900 flex-1">
-              {children}
-            </main>
-          <Footer />
+          <main className="">{children}</main>
         </ThemeProvider>
       </body>
     </html>

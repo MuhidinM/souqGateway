@@ -37,7 +37,7 @@ const Section = () => {
           </p>
           <Link
             href={"/auth/registration"}
-            className="inline-flex items-center text-white bg-blue-500 hover:bg-blue-500 focus:ring-4 focus:ring-blue-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-blue-500"
+            className="inline-flex items-center text-white bg-cyan-500 hover:bg-cyan-500 focus:ring-4 focus:ring-cyan-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-cyan-500"
           >
             Get started
             <svg

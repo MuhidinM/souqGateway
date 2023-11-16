@@ -10,7 +10,7 @@ const Hero = () => {
           className="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
           role="alert"
         >
-          <span className="text-xs bg-blue-500 rounded-full text-white px-4 py-1.5 mr-3">
+          <span className="text-xs bg-cyan-500 rounded-full text-white px-4 py-1.5 mr-3">
             New
           </span>{" "}
           <span className="text-sm font-medium">
@@ -43,7 +43,7 @@ const Hero = () => {
         <div className="flex flex-col mb-8 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <Link
             href={"/documentation"}
-            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-blue-500 hover:bg-blue-500 focus:ring-4 focus:ring-blue-500 dark:focus:ring-blue-500"
+            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-cyan-500 hover:bg-cyan-500 focus:ring-4 focus:ring-cyan-500 dark:focus:ring-cyan-500"
           >
             Learn more
             <svg
