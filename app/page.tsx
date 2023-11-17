@@ -7,9 +7,9 @@ import Section from "@/components/Section";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="relative">
       <Navbar />
-      <main className="overflow-hidden">
+      <main className="overflow-hidden pb-44">
         <Hero />
         <Features />
         <Section />

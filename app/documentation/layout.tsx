@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <div className="min-h-screen relative">
       <Navbar />
-      <div className="mt-20 md:mt-20 md:flex md:px-24">
+      <div className="mt-20 md:mt-20 md:flex md:px-24 pb-40">
         <div className="md:hidden">
           <Sidebar />
         </div>

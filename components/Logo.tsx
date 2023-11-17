@@ -6,14 +6,7 @@ const Logo = () => {
   return (
     <div>
       <Link href="/" className="flex items-center md:w-28">
-        {/* <Image
-          src={"/Blog.png"}
-          width={500}
-          className="dark:invert"
-          height={500}
-          alt="logo"
-        /> */}
-        <h1>Logo</h1>
+        <Image src="/images/logo.png" width={120} height={40} alt="img" />
       </Link>
     </div>
   );
