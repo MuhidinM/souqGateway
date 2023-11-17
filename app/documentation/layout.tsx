@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Navbar />
       <div className="mt-20 md:mt-20 md:flex md:px-24">
         <div className="md:hidden">
