@@ -42,7 +42,7 @@ export default function Sidebar() {
         <CollapsibleContent className=" ml-8 ">
           <ul>
             <li>
-              <Link href="/documentation/introduction">
+              <Link href="/documentation">
                 <Button
                   variant="ghost"
                   size="sm"

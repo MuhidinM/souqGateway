@@ -7,7 +7,7 @@ import { IntroFeature } from "./components/IntroFeature";
 
 const Page = () => {
   return (
-    <div>
+    <div className="md:border-l">
       <IntroHero />
       <IntroSection />
       <Steps />

@@ -14,14 +14,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar />
       <div className="mt-20 md:mt-20 md:flex md:px-24">
         <div className="md:hidden">
           <Sidebar />
         </div>
-        <div className="md:flex-1 md:ml-[250px]">{children}</div>
-        <div className="hidden md:block md:w-[250px] md:flex-shrink-0 md:ml-0 md:mr-6">
+        <div className="md:flex-1 md:ml-[160px]">{children}</div>
+        <div className="hidden md:block md:flex-shrink-0 md:ml-0 md:mr-6">
           <Sidebar />
         </div>
       </div>
