@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ChevronDown, ChevronsUpDown, Plus, X } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,11 +16,12 @@ export default function Sidebar() {
   const [isOpen2, setIsOpen2] = React.useState(true);
 
   return (
-    <div className="mt-4 fixed top-20 left-0">
+    // <div className="mt-4 fixed top-20 left-0">
+    <div className="mt-4 md:mt-20 md:flex md:flex-col md:fixed md:top-0 md:left-0">
       <Collapsible
         open={isOpen}
         onOpenChange={setIsOpen}
-        className="w-[250px] space-y-2"
+        className="md:w-[250px] space-y-2"
       >
         <div className="flex items-center justify-between space-x-4 px-4">
           <CollapsibleTrigger asChild>
@@ -68,7 +69,7 @@ export default function Sidebar() {
       <Collapsible
         open={isOpen2}
         onOpenChange={setIsOpen2}
-        className="w-[250px] space-y-2"
+        className="md:w-[250px] space-y-2"
       >
         <div className="flex items-center justify-between space-x-4 px-4">
           <CollapsibleTrigger asChild>
