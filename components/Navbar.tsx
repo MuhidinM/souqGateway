@@ -34,7 +34,7 @@ const Navbar = () => {
             </div>
 
             <Link
-              href={"/"}
+              href={"/auth"}
               type="button"
               className="border border-cyan-500 rounded-lg p-2 px-4 text-gray-900 mr-4 hover:bg-cyan-500 hover:text-white dark:text-white"
             >
