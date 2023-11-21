@@ -32,7 +32,7 @@ function LoginCard() {
               </label>
             </div>
             <Link
-              href={"/auth/forgot_password"}
+              href={"/auth/forgotpassword"}
               className="text-sm font-medium text-cyan-500 hover:underline dark:text-cyan-500"
             >
               Forgot password?

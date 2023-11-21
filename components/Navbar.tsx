@@ -5,6 +5,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import { MenuItem } from "@/types/types";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,25 +30,22 @@ const Navbar = () => {
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
           <Logo />
           <div className="flex md:order-2">
-            <div className="mr-4">
+            <div className="space-x-4">
               <ModeToggle />
+              <Link href={"/auth"}>
+                <Button
+                  variant={"outline"}
+                  className={
+                    "ring-2 text-cyan-500 ring-cyan-500 hover:text-cyan-400  hover:ring-cyan-400"
+                  }
+                >
+                  SIGN IN
+                </Button>
+              </Link>
+              <Link href={"/auth"}>
+                <Button className={"text-white"}>SIGN UP</Button>
+              </Link>
             </div>
-
-            <Link
-              href={"/auth"}
-              type="button"
-              className="border border-cyan-500 rounded-lg p-2 px-4 text-gray-900 mr-4 hover:bg-cyan-500 hover:text-white dark:text-white"
-            >
-              Sign in
-            </Link>
-            <Link
-              href={"/"}
-              type="button"
-              className="rounded-lg bg-cyan-500 p-2 px-4 text-white hover:bg-white hover:text-gray-900 border border-cyan-500 dark:hover:bg-gray-900 dark:hover:text-white"
-            >
-              Sign up
-            </Link>
-
             <button
               data-collapse-toggle="navbar-search"
               type="button"

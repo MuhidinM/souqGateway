@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen py-20 lg:py-0">
       <Navbar />
       <div className="">{children}</div>
       {/* <Footer /> */}
