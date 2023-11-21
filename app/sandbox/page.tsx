@@ -13,7 +13,7 @@ const SandboxPage = () => {
     <section className="">
       <div className="max-w-screen-xl px-4 py-8 mx-auto mt-32 lg:py-16 lg:px-6">
         <div className="max-w-screen-sm mx-auto text-center">
-          <h1 className="mb-4 text-5xl font-extrabold tracking-tight lg:text-7xl text-primary dark:text-primary">
+          <h1 className="mb-4 text-5xl font-extrabold tracking-tight lg:text-7xl text-cyan-500 dark:text-cyan-500">
             Coming Soon
           </h1>
           <p className="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl dark:text-white">

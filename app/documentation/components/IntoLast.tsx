@@ -24,7 +24,7 @@ function IntoLast() {
           <div className="flex justify-center">
             <Link
               href={"/auth/registration"}
-              className="inline-flex px-6 py-2 text-lg text-white border-0 rounded bg-primary focus:outline-none hover:bg-primary"
+              className="inline-flex px-6 py-2 text-lg text-white border-0 rounded bg-cyan-500 focus:outline-none hover:bg-cyan-500"
             >
               Get started
             </Link>

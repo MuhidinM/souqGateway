@@ -23,7 +23,7 @@ const Page = () => {
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                Create <span className="text-primary">Merchant</span> Account
+                Create <span className="text-cyan-500">Merchant</span> Account
               </h1>
 
               <form>
@@ -39,7 +39,7 @@ const Page = () => {
                       type="text"
                       name="username"
                       id="username"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500"
                       placeholder="Valid Email or Phone Number"
                     />
                   </div>
@@ -55,7 +55,7 @@ const Page = () => {
                       name="password"
                       id="password"
                       placeholder="••••••••"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500"
                     />
                   </div>
                   <div>
@@ -70,19 +70,18 @@ const Page = () => {
                       name="confirmPassword"
                       id="confirm-password"
                       placeholder="••••••••"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500"
                     />
                   </div>
                   <div className="flex flex-col items-start">
-                    <div className="flex items-center h-5">
-                    </div>
+                    <div className="flex items-center h-5"></div>
                     <div className="flex items-center text-sm">
                       <input
                         id="acceptTerms"
                         name="acceptTerms"
                         aria-describedby="terms"
                         type="checkbox"
-                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary dark:ring-offset-gray-800"
+                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-cyan-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-cyan-500 dark:ring-offset-gray-800"
                       />
                       <label
                         htmlFor="terms"
@@ -91,7 +90,7 @@ const Page = () => {
                         {" "}
                         Accept the{" "}
                         <Link
-                          className="font-medium text-primary hover:underline dark:text-primary"
+                          className="font-medium text-cyan-500 hover:underline dark:text-cyan-500"
                           href="/auth/termsandconditions"
                         >
                           Terms and Conditions
@@ -101,7 +100,7 @@ const Page = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full text-white bg-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary dark:hover:bg-primary dark:focus:ring-primary"
+                    className="w-full text-white bg-cyan-500 hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-cyan-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-cyan-500 dark:hover:bg-cyan-500 dark:focus:ring-cyan-500"
                   >
                     Create an account
                   </button>
@@ -109,7 +108,7 @@ const Page = () => {
                     Already have an account?{" "}
                     <Link
                       href="/auth"
-                      className="font-medium text-primary hover:underline dark:text-primary"
+                      className="font-medium text-cyan-500 hover:underline dark:text-cyan-500"
                     >
                       Login here
                     </Link>
