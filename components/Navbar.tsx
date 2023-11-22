@@ -42,7 +42,7 @@ const Navbar = () => {
                   SIGN IN
                 </Button>
               </Link>
-              <Link href={"/auth"}>
+              <Link href={"/auth/registration"}>
                 <Button className={"text-white"}>SIGN UP</Button>
               </Link>
             </div>
