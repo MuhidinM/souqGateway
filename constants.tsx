@@ -6,13 +6,18 @@ import {
   FastForward,
   Scale,
   ShieldCheck,
+  ArrowLeftRight,
+  BadgeDollarSign,
+  BadgeHelp,
+  Banknote,
+  CalendarCheck,
+  FileText,
+  Globe,
+  LayoutDashboard,
+  Store,
+  TabletSmartphone,
 } from "lucide-react";
-import { usePathname } from "next/navigation";
-// export const menuItems: MenuItem[] = [
-//   { title: "Home", url: "/" },
-//   { title: "Documentation", url: "/documentation" },
-//   { title: "Sandbox", url: "/sandbox" },
-// ];
+import { SideBarItem } from "@/types/types";
 
 export const features: Feature[] = [
   {
@@ -50,5 +55,96 @@ export const features: Feature[] = [
     description:
       "Souqpass offers fast and secure transactions, with extremely low fees. We also offer a variety of features that make it easy to recieve payment.",
     icon: <Cable className="text-cyan-500" />,
+  },
+];
+
+export const sideBar: SideBarItem[] = [
+  {
+    name: "dashboard",
+    label: "Dashboard",
+    icon: <LayoutDashboard />,
+    hide: false, // set the hidden value to true if you want to. U can use different var for different purposes.
+    path: "/merchants",
+    active: "/merchants",
+  },
+  {
+    name: "accounts",
+    label: "Accounts",
+    icon: <BadgeDollarSign />,
+    hide: false,
+    path: "/merchants/accounts",
+    active: "/merchants/accounts",
+  },
+  {
+    name: "transactions",
+    label: "Transactions",
+    icon: <ArrowLeftRight />,
+    hide: false,
+    path: "/merchants/transactions",
+    active: "/merchants/transactions",
+  },
+  {
+    name: "apilinks",
+    label: "Api Links",
+    icon: <Cable />,
+    hide: false,
+    path: "/merchants/apilinks",
+    active: "/merchants/apilinks",
+  },
+  {
+    name: "inventory",
+    label: "Inventory",
+    icon: <Store />,
+    hide: false,
+    path: "/merchants/inventory",
+    active: "/merchants/inventory",
+  },
+  {
+    name: "loan",
+    label: "Loan",
+    icon: <Banknote />,
+    hide: false,
+    path: "/merchants/loan",
+    active: "/merchants/loan",
+  },
+  {
+    name: "event",
+    label: "Event",
+    icon: <CalendarCheck />,
+    hide: false,
+    path: "/merchants/event",
+    active: "/merchants/event",
+  },
+  {
+    name: "report",
+    label: "Report",
+    icon: <FileText />,
+    hide: false,
+    path: "/merchants/report",
+    active: "/merchants/report",
+  },
+  {
+    name: "domains",
+    label: "Domains",
+    icon: <Globe />,
+    hide: false,
+    path: "/merchants/domains",
+    active: "/merchants/domains",
+  },
+  {
+    name: "devices",
+    label: "Devices",
+    icon: <TabletSmartphone />,
+    hide: false,
+    path: "/merchants/devices",
+    active: "/merchants/devices",
+  },
+  {
+    name: "help",
+    label: "Help",
+    icon: <BadgeHelp />,
+    hide: false,
+    path: "/merchants/help",
+    active: "/merchants/help",
   },
 ];
