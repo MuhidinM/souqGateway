@@ -100,12 +100,12 @@ export const sideBar: SideBarItem[] = [
     active: "/merchants/inventory",
   },
   {
-    name: "loanList",
-    label: "Loan List",
+    name: "loan",
+    label: "Loan",
     icon: <Banknote />,
     hide: false,
-    path: "/merchants/loanList",
-    active: "/merchants/loanList",
+    path: "/merchants/loan",
+    active: "/merchants/loan",
   },
   {
     name: "event",
