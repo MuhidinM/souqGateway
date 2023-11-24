@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-// import "./globals.css";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
 
 export const metadata: Metadata = {
   title: "Souq Payment Gateway",
@@ -12,9 +13,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <div>Homenav</div>
-      <div>{children}</div>
-    </>
+    <div className="">
+      <Sidebar />
+      <div className="p-4 sm:ml-64">
+        <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+          {children}
+        </div>
+      </div>
+    </div>
   );
 }
