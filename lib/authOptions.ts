@@ -66,12 +66,4 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
   },
-
-  // Set secret key for JWT tokens
-  secret: process.env.NEXTAUTH_SECRET,
-
-  // Configure pages for login and sign-out
-  pages: {
-    signIn: "auth",
-  },
 };
