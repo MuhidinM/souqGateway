@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
+import { NewSessionProvider } from "@/providers/session-provider";
 
 export const metadata: Metadata = {
   title: "Souq Payment Gateway",
@@ -22,7 +22,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="">{children}</main>
+          <NewSessionProvider>
+            <main className="">{children}</main>
+          </NewSessionProvider>
         </ThemeProvider>
       </body>
     </html>

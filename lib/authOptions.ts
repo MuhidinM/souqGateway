@@ -1,26 +1,25 @@
-import { NextAuthOptions } from "next-auth";
+import { type NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import jwt, { JwtPayload } from "jsonwebtoken";
 
 export const authOptions: NextAuthOptions = {
-  // Configure session storage options
-  session: {
-    strategy: "jwt",
-    maxAge: 30 * 60, // Set session expiration time to 30 minutes
-  },
-
-  // Define authentication providers
   providers: [
     CredentialsProvider({
-      name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "jsmith" },
+        email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const { email, password } = credentials as {
-          email: string;
-          password: string;
-        };
+        const { email, password } = credentials ?? {};
+        if (!email || !password) {
+          throw new Error("Missing username or password");
+        }
+        // const user = await prismadb.user.findUnique({
+
+        if (!email || !password) {
+          console.log("Missing username or password");
+          throw new Error("Missing username or password");
+        }
 
         // Fetch user data from API
         const res = await fetch("http://192.168.2.78:3000/auth/login", {
@@ -28,47 +27,56 @@ export const authOptions: NextAuthOptions = {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email, password }),
+          body: JSON.stringify({ username: email, password }),
         });
 
         // Check for successful login
         if (!res.ok) throw new Error("Invalid credentials");
 
         // Parse user data from response
-        const user: { id: string; name: string; email: string } =
-          await res.json();
+        const userData = await res.json();
+        const { token } = userData;
+        const decodedData = jwt.decode(token) as JwtPayload;
+        console.log(decodedData);
 
-        // Return user object
-        return user;
+        if (!decodedData) {
+          return null;
+        }
+
+        return {
+          id: decodedData.user_id || "",
+          email: decodedData.email_address,
+          name: decodedData.email_address,
+          role: decodedData.role,
+        };
       },
     }),
   ],
-
-  // Define custom callbacks
   callbacks: {
-    // Customize session data
     session: ({ session, token }) => {
       return {
         ...session,
         user: {
           ...session.user,
-          id: token.sub, // Access user ID from JWT token
+          id: token.id,
         },
       };
     },
-
-    // Customize JWT token content
     jwt: ({ token, user }) => {
       if (user) {
-        const { id, name, email } = user;
+        const u = user as unknown as any;
         return {
           ...token,
-          id,
-          name,
-          email,
+          id: u.id,
+          name: u.name,
+          email: u.email,
+          role: u.role,
         };
       }
       return token;
     },
+  },
+  pages: {
+    signIn: "/auth",
   },
 };
