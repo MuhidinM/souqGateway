@@ -77,7 +77,7 @@ const Sidebar = () => {
                         await signOut();
                         router.push("/");
                       }}
-                      className="flex items-center p-2 text-gray-500 rounded-lg dark:text-white hover:text-cyan-500 dark:hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                      className="w-full bg-red-500 hover:bg-red-400"
                     >
                       <LogOut />
                       <span className="ms-3">Log out</span>
