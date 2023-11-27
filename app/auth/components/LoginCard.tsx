@@ -42,20 +42,18 @@ function LoginCard() {
 
   const onSubmit = async (data: Login) => {
     setLoading(true);
-    console.log(data);
     try {
       // await Addclient(data);
       // const response = await logUser(data);
       signIn("credentials", {
         redirect: false,
-        username: data.username,
+        email: data.username,
         password: data.password,
         // @ts-ignore
       }).then(({ error }) => {
         if (error) {
           toast.error(error);
         } else {
-          toast.error(error);
           router.refresh();
           router.push("/merchants");
         }

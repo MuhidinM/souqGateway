@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { ModeToggle } from "@/components/ThemeTogle";
 import Logo from "./Logo";
@@ -6,8 +7,12 @@ import Link from "next/link";
 import Footer from "./Footer";
 import Avatars from "./Avatar";
 import { sideBar } from "@/constants";
+import { Button } from "@/components/ui/button";
+import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Sidebar = () => {
+  const router = useRouter();
   return (
     <div className="">
       <div className="md:hidden flex items-center justify-between my-2 mx-4">
@@ -67,13 +72,16 @@ const Sidebar = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="#"
+                    <Button
+                      onClick={async () => {
+                        await signOut();
+                        router.push("/");
+                      }}
                       className="flex items-center p-2 text-gray-500 rounded-lg dark:text-white hover:text-cyan-500 dark:hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-700 group"
                     >
                       <LogOut />
                       <span className="ms-3">Log out</span>
-                    </Link>
+                    </Button>
                   </li>
                 </ul>
               </div>
