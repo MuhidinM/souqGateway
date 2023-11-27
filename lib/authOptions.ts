@@ -22,7 +22,8 @@ export const authOptions: NextAuthOptions = {
           password: string;
         };
 
-        const res = await fetch("http://127.0.0.1:8000/login", {
+        // Fetch user data from API
+        const res = await fetch("http://192.168.2.78:3000/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -30,10 +31,14 @@ export const authOptions: NextAuthOptions = {
           body: JSON.stringify({ email, password }),
         });
 
+        // Check for successful login
         if (!res.ok) throw new Error("Invalid credentials");
 
+        // Parse user data from response
         const user: { id: string; name: string; email: string } =
           await res.json();
+
+        // Return user object
         return user;
       },
     }),
@@ -65,13 +70,5 @@ export const authOptions: NextAuthOptions = {
       }
       return token;
     },
-  },
-
-  // Set secret key for JWT tokens
-  secret: process.env.NEXTAUTH_SECRET,
-
-  // Configure pages for login and sign-out
-  pages: {
-    signIn: "auth",
   },
 };
