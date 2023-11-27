@@ -79,6 +79,7 @@ function LoginCard() {
 
   return (
     <div className="w-full max-w-xl mt-8 xl:w-5/12">
+      {/* <div>here{searchParams?.message && <h2>{searchParams.message}</h2>}</div> */}
       <div className="p-6 bg-white rounded shadow-2xl sm:p-10 dark:bg-gray-800">
         <Form {...form}>
           <form
