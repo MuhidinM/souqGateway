@@ -1,4 +1,4 @@
-import { Feature } from "@/types/types";
+import { Feature, PropsSettings } from "@/types/types";
 import {
   Blocks,
   Cable,
@@ -147,4 +147,10 @@ export const sideBar: SideBarItem[] = [
     path: "/merchants/help",
     active: "/merchants/help",
   },
+];
+
+export const Options: PropsSettings[] = [
+  { value: "option1", label: "Option_1" },
+  { value: "option2", label: "Option_2" },
+  { value: "option3", label: "Option_3" },
 ];

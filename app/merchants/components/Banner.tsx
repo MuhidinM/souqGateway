@@ -14,8 +14,8 @@ function Banner() {
         </p>
       </div>
       <div className="flex items-center flex-shrink-0">
-        <Link href="/merchant/setting">
-          <Button className="text-white">Go to Setting</Button>
+        <Link href="/merchants/setting">
+          <Button>Go to Setting</Button>
         </Link>
       </div>
     </div>
