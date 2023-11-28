@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
+
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Souq Payment Gateway",
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <div className="">
       <Sidebar />
+
       <div className="p-4 sm:ml-64">
+        <Breadcrumbs />
         <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
           {children}
         </div>
