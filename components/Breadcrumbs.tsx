@@ -47,7 +47,9 @@ const Breadcrumbs = () => {
                 </svg>
                 {isLast ? (
                   <span className="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
-                    {capitalizedPathname}
+                    {capitalizedPathname === "Apilinks"
+                      ? "Api Links"
+                      : capitalizedPathname}
                   </span>
                 ) : isHome ? (
                   <Link
@@ -65,7 +67,9 @@ const Breadcrumbs = () => {
                     href={routeTo}
                     className="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white"
                   >
-                    {capitalizedPathname}
+                    {capitalizedPathname === "Apilinks"
+                      ? "Api Links"
+                      : capitalizedPathname}
                   </Link>
                 )}
               </div>

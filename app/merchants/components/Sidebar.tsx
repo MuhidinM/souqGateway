@@ -8,11 +8,13 @@ import Footer from "./Footer";
 import Avatars from "./Avatar";
 import { sideBar } from "@/constants";
 import { Button } from "@/components/ui/button";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Sidebar = () => {
+  const { data: session } = useSession();
+  // console.log(session, status);
   const router = useRouter();
   return (
     <div className="">
@@ -92,7 +94,9 @@ const Sidebar = () => {
                 </div>
                 <div className="flex flex-col">
                   <p>Name Fname</p>
-                  <span className="text-sm text-gray-400">@username</span>
+                  <span className="text-sm text-gray-400">
+                    {session?.user?.email}
+                  </span>
                 </div>
                 <div className="flex">
                   <ModeToggle />
