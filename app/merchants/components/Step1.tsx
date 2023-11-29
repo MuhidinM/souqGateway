@@ -1,13 +1,7 @@
 import { Input } from "@/components/ui/input";
 import React, { ChangeEvent } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { PropsStep1 } from "@/types/types";
+import SelectMenu from "@/components/SelectMenu";
 
 const Step1: React.FC<PropsStep1> = ({
   inputs,
@@ -47,46 +41,16 @@ const Step1: React.FC<PropsStep1> = ({
       />
     </div>
     <div className="">
-      <Select>
-        <SelectTrigger className="">
-          <SelectValue placeholder="Compliance of Anti Money Laundering" />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <SelectMenu
+        placeholder="Compliance of Anti Money Laundering"
+        options={options}
+      />
     </div>
     <div className="">
-      <Select>
-        <SelectTrigger className="">
-          <SelectValue placeholder="Industry" />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <SelectMenu placeholder="Industry" options={options} />
     </div>
     <div className="">
-      <Select>
-        <SelectTrigger className="">
-          <SelectValue placeholder="Category" />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <SelectMenu placeholder="Category" options={options} />
     </div>
   </>
 );

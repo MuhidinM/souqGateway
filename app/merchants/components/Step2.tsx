@@ -1,14 +1,8 @@
 import { Input } from "@/components/ui/input";
 import React, { ChangeEvent } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { PropsStep2 } from "@/types/types";
 import FileInput from "@/components/FileInput";
+import SelectMenu from "@/components/SelectMenu";
 
 const Step2: React.FC<PropsStep2> = ({
   inputs,
@@ -19,60 +13,16 @@ const Step2: React.FC<PropsStep2> = ({
   <>
     <p className="col-span-2 text-lg">Business Address</p>
     <div className="">
-      <Select>
-        <SelectTrigger className="">
-          <SelectValue placeholder="Region" />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <SelectMenu placeholder="Region" options={options} />
     </div>
     <div className="">
-      <Select>
-        <SelectTrigger className="">
-          <SelectValue placeholder="City" />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <SelectMenu placeholder="City" options={options} />
     </div>
     <div className="">
-      <Select>
-        <SelectTrigger className="">
-          <SelectValue placeholder="Kifle Ketema" />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <SelectMenu placeholder="Kifle Ketema" options={options} />
     </div>
     <div className="">
-      <Select>
-        <SelectTrigger className="">
-          <SelectValue placeholder="Woreda" />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <SelectMenu placeholder="Woreda" options={options} />
     </div>
     <div className="">
       <Input

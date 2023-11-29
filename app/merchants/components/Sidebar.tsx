@@ -8,10 +8,12 @@ import Footer from "./Footer";
 import Avatars from "./Avatar";
 import { sideBar } from "@/constants";
 import { Button } from "@/components/ui/button";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const Sidebar = () => {
+  const { data: session, status } = useSession();
+  console.log("lets see", session, status);
   const router = useRouter();
   return (
     <div className="">
@@ -97,7 +99,7 @@ const Sidebar = () => {
                   <ModeToggle />
                 </div>
               </div>
-              <Footer />
+              <Footer />  
             </div>
           </div>
         </div>

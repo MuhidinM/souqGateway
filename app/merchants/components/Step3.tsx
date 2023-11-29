@@ -1,16 +1,9 @@
-import { Input } from "@/components/ui/input";
 import React, { ChangeEvent } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Propsstep3 } from "@/types/types";
 import { Textarea } from "@/components/ui/textarea";
 import FileInput from "@/components/FileInput";
 import { Label } from "@/components/ui/label";
+import SelectMenu from "@/components/SelectMenu";
 
 const Step3: React.FC<Propsstep3> = ({
   inputs,
@@ -29,18 +22,7 @@ const Step3: React.FC<Propsstep3> = ({
       />
     </div>
     <div className="col-span-2">
-      <Select>
-        <SelectTrigger className="">
-          <SelectValue placeholder="Type of Identification" />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+    <SelectMenu placeholder="Type of Identification" options={options} />
     </div>
     <div className="col-span-2">
       <FileInput
