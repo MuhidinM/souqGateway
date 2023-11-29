@@ -10,10 +10,11 @@ import { sideBar } from "@/constants";
 import { Button } from "@/components/ui/button";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Sidebar = () => {
-  const { data: session, status } = useSession();
-  console.log("lets see", session, status);
+  const { data: session } = useSession();
+  // console.log(session, status);
   const router = useRouter();
   return (
     <div className="">
@@ -66,7 +67,7 @@ const Sidebar = () => {
                 <ul className="space-y-2 font-medium w-full ">
                   <li>
                     <Link
-                      href="#"
+                      href="/merchants/setting"
                       className="flex items-center p-2 text-gray-500 rounded-lg dark:text-white hover:text-cyan-500 dark:hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-700 group"
                     >
                       <Settings />
@@ -79,7 +80,7 @@ const Sidebar = () => {
                         await signOut();
                         router.push("/");
                       }}
-                      className="flex items-center p-2 text-gray-500 rounded-lg dark:text-white hover:text-cyan-500 dark:hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                      className="w-full bg-red-500 hover:bg-red-600"
                     >
                       <LogOut />
                       <span className="ms-3">Log out</span>
@@ -93,7 +94,9 @@ const Sidebar = () => {
                 </div>
                 <div className="flex flex-col">
                   <p>Name Fname</p>
-                  <span className="text-sm text-gray-400">@username</span>
+                  <span className="text-sm text-gray-400">
+                    {session?.user?.email}
+                  </span>
                 </div>
                 <div className="flex">
                   <ModeToggle />

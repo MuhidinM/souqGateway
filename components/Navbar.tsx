@@ -6,8 +6,11 @@ import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import { MenuItem } from "@/types/types";
 import { Button } from "./ui/button";
+import { useSession } from "next-auth/react";
+import Avatars from "@/app/merchants/components/Avatar";
 
 const Navbar = () => {
+  const { data: session, status } = useSession();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const toggleMobileMenu = () => {
@@ -30,22 +33,38 @@ const Navbar = () => {
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
           <Logo />
           <div className="flex md:order-2">
-            <div className="space-x-4">
-              <ModeToggle />
-              <Link href={"/auth"}>
-                <Button
-                  variant={"outline"}
-                  className={
-                    "ring-2 text-cyan-500 ring-cyan-500 hover:text-cyan-400  hover:ring-cyan-400"
-                  }
-                >
-                  SIGN IN
-                </Button>
-              </Link>
-              <Link href={"/auth"}>
-                <Button className={"text-white"}>SIGN UP</Button>
-              </Link>
-            </div>
+            {status === "authenticated" ? (
+              <div className="flex items-center gap-4">
+                <div className="flex">
+                  <ModeToggle />
+                </div>
+                <div className="flex">
+                  <Link href={"/merchants"}>
+                    <Button className={"text-white"}>DASHBOARD</Button>
+                  </Link>
+                </div>
+                <div className="flex">
+                  <Avatars />
+                </div>
+              </div>
+            ) : (
+              <div className="space-x-4">
+                <ModeToggle />
+                <Link href={"/auth"}>
+                  <Button
+                    variant={"outline"}
+                    className={
+                      "ring-2 text-cyan-500 ring-cyan-500 hover:text-cyan-400  hover:ring-cyan-400"
+                    }
+                  >
+                    SIGN IN
+                  </Button>
+                </Link>
+                <Link href={"/auth/registration"}>
+                  <Button className={"text-white"}>SIGN UP</Button>
+                </Link>
+              </div>
+            )}
             <button
               data-collapse-toggle="navbar-search"
               type="button"
