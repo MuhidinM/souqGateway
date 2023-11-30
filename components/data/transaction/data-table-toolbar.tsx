@@ -1,13 +1,9 @@
 "use client";
-
+import { CSVLink } from "react-csv";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { Table } from "@tanstack/react-table";
-
 import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
-// import { DataTableViewOptions } from "@/app/examples/tasks/components/data-table-view-options"
-
-import { priorities } from "../sample/data";
 import { DataTableFacetedFilter } from "../../ui/data-table-faceted-filter";
 import { DataTableViewOptions } from "../../ui/data-table-view-options";
 import { types, statuses } from "./data";
@@ -21,7 +17,30 @@ export function DataTableToolbar<TData>({
 }: DataTableToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0;
 
-  console.log(table.getFilteredSelectedRowModel().rows);
+  const headers = [
+    { label: "Transaction ID", key: "details.transactionID" },
+    { label: "Credit Account Number", key: "details.CREDITACCTNO" },
+    { label: "Debit Account Number", key: "details.DEBITACCTNO" },
+    { label: "Status", key: "details.STATUS" },
+    { label: "Debit Amount", key: "details.DEBITAMOUNT" },
+    { label: "Transaction Date", key: "details.TRANSACTION_DATE" },
+    { label: "Transaction Type", key: "details.TRANSACTIONTYPE" },
+  ];
+  // console.log(table.getFilteredSelectedRowModel().rows);
+  // console.log(table.getRowModel().rows)
+  const rowData = table.getRowModel().rows.map((row) => ({
+    details: {
+      transactionID: row.original.transactionID,
+      CREDITACCTNO: row.original.CREDITACCTNO,
+      DEBITACCTNO: row.original.DEBITACCTNO,
+      STATUS: row.original.STATUS,
+      DEBITAMOUNT: row.original.DEBITAMOUNT,
+      TRANSACTION_DATE: row.original.TRANSACTION_DATE,
+      TRANSACTIONTYPE: row.original.TRANSACTIONTYPE,
+    },
+  }));
+  // Define CSV headers
+
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
@@ -60,8 +79,19 @@ export function DataTableToolbar<TData>({
           </Button>
         )}
       </div>
+      <Button variant="outline" size="sm" className="mr-4 hidden h-8 lg:flex">
+        <CSVLink
+          data={rowData}
+          headers={headers}
+          filename={"transactions.csv"}
+          className="btn btn-primary"
+          target="_blank"
+        >
+          Export All
+        </CSVLink>
+      </Button>
       <DataTableViewOptions table={table} />
-      {/* <DataTableViewOptions table={table} /> */}
+      {/* <MixerHorizontalIcon className="mr-2 h-4 w-4" /> */}
     </div>
   );
 }
