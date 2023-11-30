@@ -13,7 +13,7 @@ interface CodeTypes {
 const Code: React.FC<CodeTypes> = ({ codeString,title, language }) => {
   return (
     <div className="my-4">
-      <div className="max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden">
+      <div className="min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden">
         <div className="flex justify-between px-4 text-white text-xs items-center">
           <p className="text-sm">{title}</p>
           <Button
