@@ -3,13 +3,14 @@
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { Table } from "@tanstack/react-table";
 
-import { Button } from "./button";
-import { Input } from "./input";
+import { Button } from "../../ui/button";
+import { Input } from "../../ui/input";
 // import { DataTableViewOptions } from "@/app/examples/tasks/components/data-table-view-options"
 
-import { priorities, statuses } from "./data/data";
-import { DataTableFacetedFilter } from "./data-table-faceted-filter";
-import { DataTableViewOptions } from "./data-table-view-options";
+import { priorities } from "../sample/data";
+import { DataTableFacetedFilter } from "../../ui/data-table-faceted-filter";
+import { DataTableViewOptions } from "../../ui/data-table-view-options";
+import { types, statuses } from "./data";
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
@@ -20,29 +21,32 @@ export function DataTableToolbar<TData>({
 }: DataTableToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0;
 
+  console.log(table.getFilteredSelectedRowModel().rows);
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
         <Input
-          placeholder="Filter tasks..."
-          value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
+          placeholder="Transaction Id..."
+          value={
+            (table.getColumn("transactionID")?.getFilterValue() as string) ?? ""
+          }
           onChange={(event) =>
-            table.getColumn("title")?.setFilterValue(event.target.value)
+            table.getColumn("transactionID")?.setFilterValue(event.target.value)
           }
           className="h-8 w-[150px] lg:w-[250px]"
         />
-        {table.getColumn("status") && (
+        {table.getColumn("STATUS") && (
           <DataTableFacetedFilter
-            column={table.getColumn("status")}
+            column={table.getColumn("STATUS")}
             title="Status"
             options={statuses}
           />
         )}
-        {table.getColumn("priority") && (
+        {table.getColumn("TRANSACTIONTYPE") && (
           <DataTableFacetedFilter
-            column={table.getColumn("priority")}
-            title="Priority"
-            options={priorities}
+            column={table.getColumn("TRANSACTIONTYPE")}
+            title="Type"
+            options={types}
           />
         )}
         {isFiltered && (
@@ -57,6 +61,7 @@ export function DataTableToolbar<TData>({
         )}
       </div>
       <DataTableViewOptions table={table} />
+      {/* <DataTableViewOptions table={table} /> */}
     </div>
   );
 }

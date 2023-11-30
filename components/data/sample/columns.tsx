@@ -2,13 +2,13 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import { Badge } from "./badge";
-import { Checkbox } from "./checkbox";
+import { Badge } from "../../ui/badge";
+import { Checkbox } from "../../ui/checkbox";
 
-import { labels, priorities, statuses } from "./data/data";
-import { Task } from "./data/schema";
-import { DataTableColumnHeader } from "./data-table-column-header";
-import { DataTableRowActions } from "./data-table-row-actions";
+import { labels, priorities, statuses } from "./data";
+import { Task } from "./schema";
+import { DataTableColumnHeader } from "../../ui/data-table-column-header";
+import { DataTableRowActions } from "../transaction/data-table-row-actions";
 
 export const columns: ColumnDef<Task>[] = [
   {

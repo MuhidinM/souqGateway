@@ -24,7 +24,7 @@ import {
   TableHeader,
   TableRow,
 } from "./table";
-import { DataTableToolbar } from "./data-table-toolbar";
+import { DataTableToolbar } from "../data/transaction/data-table-toolbar";
 import { DataTablePagination } from "./data-table-pagination";
 
 interface DataTableProps<TData, TValue> {

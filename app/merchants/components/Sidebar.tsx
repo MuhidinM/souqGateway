@@ -94,7 +94,7 @@ const Sidebar = () => {
                 </div>
                 <div className="flex flex-col">
                   <p>Name Fname</p>
-                  <span className="text-sm text-gray-400">
+                  <span className="text-xs text-gray-400">
                     {session?.user?.email}
                   </span>
                 </div>
