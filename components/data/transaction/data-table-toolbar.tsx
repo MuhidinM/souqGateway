@@ -7,6 +7,7 @@ import { Input } from "../../ui/input";
 import { DataTableFacetedFilter } from "../../ui/data-table-faceted-filter";
 import { DataTableViewOptions } from "../../ui/data-table-view-options";
 import { types, statuses } from "./data";
+import { Download } from "lucide-react";
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
@@ -39,6 +40,19 @@ export function DataTableToolbar<TData>({
       TRANSACTIONTYPE: row.original.TRANSACTIONTYPE,
     },
   }));
+
+  const filterdData = table.getFilteredSelectedRowModel().rows.map((row) => ({
+    details: {
+      transactionID: row.original.transactionID,
+      CREDITACCTNO: row.original.CREDITACCTNO,
+      DEBITACCTNO: row.original.DEBITACCTNO,
+      STATUS: row.original.STATUS,
+      DEBITAMOUNT: row.original.DEBITAMOUNT,
+      TRANSACTION_DATE: row.original.TRANSACTION_DATE,
+      TRANSACTIONTYPE: row.original.TRANSACTIONTYPE,
+    },
+  }));
+  // console.log(rowData);
   // Define CSV headers
 
   return (
@@ -79,7 +93,28 @@ export function DataTableToolbar<TData>({
           </Button>
         )}
       </div>
-      <Button variant="outline" size="sm" className="mr-4 hidden h-8 lg:flex">
+      <Button
+        variant="outline"
+        size="sm"
+        className="mr-4 hidden h-8 space-x-2 lg:flex"
+      >
+        <Download size={16} />
+        <CSVLink
+          data={filterdData}
+          headers={headers}
+          filename={"transactions.csv"}
+          className="btn btn-primary"
+          target="_blank"
+        >
+          Export Filtered
+        </CSVLink>
+      </Button>
+      <Button
+        variant="outline"
+        size="sm"
+        className="mr-4 hidden space-x-2 h-8 lg:flex"
+      >
+        <Download size={16} />
         <CSVLink
           data={rowData}
           headers={headers}

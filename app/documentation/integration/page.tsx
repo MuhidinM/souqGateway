@@ -20,7 +20,7 @@ export default Code;`;
 
   return (
     <div>
-      <div className="">
+      <div className="grid place-items-center">
         <Code codeString={codeString} language={"jsx"} title="Jsx Code" />
       </div>
     </div>

@@ -1,9 +1,18 @@
-import React from 'react'
+"use client";
+import Code from "@/components/Code";
+import { useSession } from "next-auth/react";
+import React from "react";
 
-const page = () => {
+const Page = () => {
+  const { data: session } = useSession();
+  const codeString: string = `Client Id : ${session?.user?.name} 
+Api Key : awsdfgtyu
+Secret Key : awsdfgtyu`; //lets replace the client id and others
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <Code codeString={codeString} language={"jsx"} title="Keys" />
+    </div>
+  );
+};
 
-export default page
+export default Page;
