@@ -10,7 +10,6 @@ import { sideBar } from "@/constants";
 import { Button } from "@/components/ui/button";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Sidebar = () => {
   const { data: session } = useSession();
