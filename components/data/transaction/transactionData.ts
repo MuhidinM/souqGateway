@@ -1,0 +1,48 @@
+export const transactionData = [
+  {
+    transactionID: "1",
+    CREDITACCTNO: "123456789",
+    DEBITACCTNO: "987654321",
+    STATUS: "in progress",
+    DEBITAMOUNT: "150.25",
+    TRANSACTION_DATE: "2023-11-01",
+    TRANSACTIONTYPE: "FT",
+  },
+  {
+    transactionID: "2",
+    CREDITACCTNO: "987654321",
+    DEBITACCTNO: "123456789",
+    STATUS: "success",
+    DEBITAMOUNT: "200.50",
+    TRANSACTION_DATE: "2023-11-02",
+    TRANSACTIONTYPE: "FT",
+  },
+  {
+    transactionID: "3",
+    CREDITACCTNO: "456789123",
+    DEBITACCTNO: "789123456",
+    STATUS: "declined",
+    DEBITAMOUNT: "75.80",
+    TRANSACTION_DATE: "2023-11-03",
+    TRANSACTIONTYPE: "FT",
+  },
+  {
+    transactionID: "4",
+    CREDITACCTNO: "789123456",
+    DEBITACCTNO: "456789123",
+    STATUS: "in progress",
+    DEBITAMOUNT: "300.00",
+    TRANSACTION_DATE: "2023-11-04",
+    TRANSACTIONTYPE: "FT",
+  },
+  {
+    transactionID: "5",
+    CREDITACCTNO: "234567890",
+    DEBITACCTNO: "678901234",
+    STATUS: "success",
+    DEBITAMOUNT: "180.90",
+    TRANSACTION_DATE: "2023-11-05",
+    TRANSACTIONTYPE: "FT",
+  },
+  // ... continue adding transactions in the same string format until 20
+];

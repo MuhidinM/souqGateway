@@ -1,9 +1,12 @@
-import React from 'react'
+import OTP from "@/components/OTP";
+import React from "react";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div className="">
+      
+    </div>
+  );
+};
 
-export default page
+export default page;
